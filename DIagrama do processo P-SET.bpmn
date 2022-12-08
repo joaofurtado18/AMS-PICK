@@ -7,7 +7,7 @@
     <bpmn:messageFlow id="Flow_1gebx3q" sourceRef="Participant_0bejurz" targetRef="Event_1893m22" />
     <bpmn:messageFlow id="Flow_0haxjtl" name="" sourceRef="Activity_0vocc5v" targetRef="Participant_0bejurz" />
     <bpmn:messageFlow id="Flow_0jg96er" name="Notificação" sourceRef="Activity_0aipsl4" targetRef="Participant_0bejurz" />
-    <bpmn:messageFlow id="Flow_10ulc2q" sourceRef="Event_097fjqs" targetRef="Participant_0bejurz" />
+    <bpmn:messageFlow id="Flow_10ulc2q" name="Notificação" sourceRef="Event_097fjqs" targetRef="Participant_0bejurz" />
     <bpmn:messageFlow id="Flow_1pv7als" sourceRef="Participant_0bejurz" targetRef="Event_0qyzrqw" />
     <bpmn:messageFlow id="Flow_11rbx1g" sourceRef="Participant_0bejurz" targetRef="Event_0ao3p20" />
     <bpmn:messageFlow id="Flow_0n13lf3" sourceRef="Participant_0bejurz" targetRef="Event_087at3p" />
@@ -20,118 +20,34 @@
       <bpmn:outgoing>Flow_033pxjw</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1f3dsxw" />
     </bpmn:boundaryEvent>
-    <bpmn:sequenceFlow id="Flow_033pxjw" sourceRef="Event_1hknknu" targetRef="Activity_1u2gm1e" />
-    <bpmn:startEvent id="Event_1893m22" name="Descrição da loja recebida">
-      <bpmn:outgoing>Flow_00i2z9w</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1599hz7" />
-    </bpmn:startEvent>
-    <bpmn:sendTask id="Activity_0vocc5v" name="Envio do plano do projeto ao cliente">
-      <bpmn:incoming>Flow_0frb8ww</bpmn:incoming>
-      <bpmn:outgoing>Flow_1ivwlrs</bpmn:outgoing>
-      <bpmn:property id="Property_1j88q77" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_0pojxxf">
-        <bpmn:sourceRef>DataObjectReference_04g571v</bpmn:sourceRef>
-        <bpmn:targetRef>Property_1j88q77</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-      <bpmn:dataInputAssociation id="DataInputAssociation_0l0oclx">
-        <bpmn:sourceRef>DataObjectReference_1f1oau8</bpmn:sourceRef>
-        <bpmn:targetRef>Property_1j88q77</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:sendTask>
-    <bpmn:task id="Activity_1bge4y3" name="Produção do plano de projeto">
-      <bpmn:incoming>Flow_0f99ffo</bpmn:incoming>
-      <bpmn:outgoing>Flow_1b2q1zu</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_0tfmdt6">
-        <bpmn:targetRef>DataObjectReference_1f1oau8</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
-    <bpmn:dataObjectReference id="DataObjectReference_1f1oau8" dataObjectRef="DataObject_0nh87b3" />
-    <bpmn:dataObject id="DataObject_0nh87b3" />
-    <bpmn:eventBasedGateway id="Gateway_1sff9ch">
-      <bpmn:incoming>Flow_1ivwlrs</bpmn:incoming>
-      <bpmn:outgoing>Flow_141yzl2</bpmn:outgoing>
-      <bpmn:outgoing>Flow_0xrotr2</bpmn:outgoing>
-      <bpmn:outgoing>Flow_1g0fq61</bpmn:outgoing>
-    </bpmn:eventBasedGateway>
-    <bpmn:intermediateCatchEvent id="Event_0qyzrqw" name="aprovação plano de projeto">
-      <bpmn:incoming>Flow_141yzl2</bpmn:incoming>
-      <bpmn:outgoing>Flow_1ahl93l</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_056p581" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:intermediateCatchEvent id="Event_087at3p" name="pedido de aterações">
-      <bpmn:incoming>Flow_1g0fq61</bpmn:incoming>
-      <bpmn:outgoing>Flow_1cyey8f</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_08teq54" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:intermediateCatchEvent id="Event_0ao3p20" name="desistência">
-      <bpmn:incoming>Flow_0xrotr2</bpmn:incoming>
-      <bpmn:outgoing>Flow_0g7ai0y</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0cm33ei" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:task id="Activity_0h3mywd" name="Produção de relatório de desistência">
-      <bpmn:incoming>Flow_0g7ai0y</bpmn:incoming>
-      <bpmn:outgoing>Flow_1qgvt2h</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1dl4qoy">
-        <bpmn:targetRef>DataObjectReference_0bps4q9</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
-    <bpmn:exclusiveGateway id="Gateway_04o04wm">
-      <bpmn:incoming>Flow_0semo8c</bpmn:incoming>
-      <bpmn:incoming>Flow_1b2q1zu</bpmn:incoming>
-      <bpmn:outgoing>Flow_0frb8ww</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:task id="Activity_1ccwe1g" name="Revisão do plano de projeto">
-      <bpmn:incoming>Flow_1uzapdw</bpmn:incoming>
-      <bpmn:outgoing>Flow_0semo8c</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_10s45gg">
-        <bpmn:targetRef>DataObjectReference_04g571v</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
-    <bpmn:dataObjectReference id="DataObjectReference_04g571v" dataObjectRef="DataObject_1yn03zy" />
-    <bpmn:dataObject id="DataObject_1yn03zy" />
-    <bpmn:callActivity id="Activity_1uph5b7" name="Análise de descrição da loja">
-      <bpmn:incoming>Flow_1cyey8f</bpmn:incoming>
-      <bpmn:outgoing>Flow_1uzapdw</bpmn:outgoing>
-    </bpmn:callActivity>
-    <bpmn:callActivity id="Activity_0mguiwn" name="Análise de descrição da loja">
-      <bpmn:incoming>Flow_00i2z9w</bpmn:incoming>
-      <bpmn:outgoing>Flow_0f99ffo</bpmn:outgoing>
-    </bpmn:callActivity>
-    <bpmn:task id="Activity_0rragw1" name="Guardar relatório de desistêcia">
-      <bpmn:incoming>Flow_1qgvt2h</bpmn:incoming>
-      <bpmn:property id="Property_0vt5ahz" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_0liiloy">
-        <bpmn:sourceRef>DataObjectReference_0bps4q9</bpmn:sourceRef>
-        <bpmn:targetRef>Property_0vt5ahz</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1m3ygcx">
-        <bpmn:targetRef>DataStoreReference_0tn9s0h</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
-    <bpmn:dataObjectReference id="DataObjectReference_0bps4q9" dataObjectRef="DataObject_186mrql" />
-    <bpmn:dataObject id="DataObject_186mrql" />
-    <bpmn:intermediateThrowEvent id="Event_0o0odue" name="Cliente pediu alterações">
-      <bpmn:incoming>Flow_1op80by</bpmn:incoming>
-      <bpmn:signalEventDefinition id="SignalEventDefinition_03njfss" />
-    </bpmn:intermediateThrowEvent>
-    <bpmn:task id="Activity_07pkmgv" name="Revisão do plano de projeto">
-      <bpmn:incoming>Flow_1tzqcgk</bpmn:incoming>
-      <bpmn:outgoing>Flow_1op80by</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:sendTask id="Activity_0vz48y3" name="Definir novo prazo">
-      <bpmn:incoming>Flow_1sq2xjd</bpmn:incoming>
-    </bpmn:sendTask>
-    <bpmn:task id="Activity_1etus1u" name="Criar relatório do projeto">
-      <bpmn:incoming>Flow_0rmma7m</bpmn:incoming>
-      <bpmn:outgoing>Flow_08yrka3</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_0zf4r8v">
-        <bpmn:targetRef>DataStoreReference_1rnqf5j</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
-    <bpmn:endEvent id="Event_097fjqs">
-      <bpmn:incoming>Flow_08yrka3</bpmn:incoming>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0bsasu1" />
-    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_033pxjw" sourceRef="Event_1hknknu" />
+    <bpmn:sequenceFlow id="Flow_08yrka3" sourceRef="Activity_1etus1u" targetRef="Event_097fjqs" />
+    <bpmn:sequenceFlow id="Flow_0rmma7m" sourceRef="Activity_053v161" targetRef="Activity_1etus1u" />
+    <bpmn:sequenceFlow id="Flow_1sq2xjd" sourceRef="Event_1g2l0tr" targetRef="Activity_0vz48y3" />
+    <bpmn:sequenceFlow id="Flow_1tzqcgk" sourceRef="Event_0yfwz0h" targetRef="Activity_07pkmgv" />
+    <bpmn:sequenceFlow id="Flow_1op80by" sourceRef="Activity_07pkmgv" targetRef="Event_0o0odue" />
+    <bpmn:sequenceFlow id="Flow_1uzapdw" sourceRef="Activity_1uph5b7" targetRef="Activity_1ccwe1g" />
+    <bpmn:sequenceFlow id="Flow_0semo8c" sourceRef="Activity_1ccwe1g" targetRef="Gateway_04o04wm" />
+    <bpmn:sequenceFlow id="Flow_1qgvt2h" sourceRef="Activity_0h3mywd" targetRef="Activity_0rragw1" />
+    <bpmn:sequenceFlow id="Flow_0g7ai0y" sourceRef="Event_0ao3p20" targetRef="Activity_0h3mywd" />
+    <bpmn:sequenceFlow id="Flow_1cyey8f" sourceRef="Event_087at3p" targetRef="Activity_1uph5b7" />
+    <bpmn:sequenceFlow id="Flow_1ahl93l" sourceRef="Event_0qyzrqw" targetRef="Activity_053v161" />
+    <bpmn:sequenceFlow id="Flow_1g0fq61" sourceRef="Gateway_1sff9ch" targetRef="Event_087at3p" />
+    <bpmn:sequenceFlow id="Flow_0xrotr2" sourceRef="Gateway_1sff9ch" targetRef="Event_0ao3p20" />
+    <bpmn:sequenceFlow id="Flow_141yzl2" sourceRef="Gateway_1sff9ch" targetRef="Event_0qyzrqw" />
+    <bpmn:sequenceFlow id="Flow_1b2q1zu" sourceRef="Activity_1bge4y3" targetRef="Gateway_04o04wm" />
+    <bpmn:sequenceFlow id="Flow_0f99ffo" sourceRef="Activity_0mguiwn" targetRef="Activity_1bge4y3" />
+    <bpmn:sequenceFlow id="Flow_1ivwlrs" sourceRef="Activity_0vocc5v" targetRef="Gateway_1sff9ch" />
+    <bpmn:sequenceFlow id="Flow_0frb8ww" sourceRef="Gateway_04o04wm" targetRef="Activity_0vocc5v" />
+    <bpmn:sequenceFlow id="Flow_00i2z9w" sourceRef="Event_1893m22" targetRef="Activity_0mguiwn" />
+    <bpmn:boundaryEvent id="Event_0yfwz0h" cancelActivity="false" attachedToRef="Activity_053v161">
+      <bpmn:outgoing>Flow_1tzqcgk</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0qtikuq" />
+    </bpmn:boundaryEvent>
+    <bpmn:boundaryEvent id="Event_1g2l0tr" name="Prazo expirado" cancelActivity="false" attachedToRef="Activity_053v161">
+      <bpmn:outgoing>Flow_1sq2xjd</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0inc4bb" />
+    </bpmn:boundaryEvent>
     <bpmn:subProcess id="Activity_053v161" name="Instalação e teste">
       <bpmn:incoming>Flow_1ahl93l</bpmn:incoming>
       <bpmn:outgoing>Flow_0rmma7m</bpmn:outgoing>
@@ -279,45 +195,129 @@
       <bpmn:dataObject id="DataObject_142vfkw" />
       <bpmn:sequenceFlow id="Flow_0kf4qt2" sourceRef="Activity_0aipsl4" targetRef="Event_0t586n1" />
     </bpmn:subProcess>
-    <bpmn:boundaryEvent id="Event_0yfwz0h" cancelActivity="false" attachedToRef="Activity_053v161">
-      <bpmn:outgoing>Flow_1tzqcgk</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0qtikuq" />
-    </bpmn:boundaryEvent>
-    <bpmn:boundaryEvent id="Event_1g2l0tr" name="Prazo expirado" cancelActivity="false" attachedToRef="Activity_053v161">
-      <bpmn:outgoing>Flow_1sq2xjd</bpmn:outgoing>
-      <bpmn:timerEventDefinition id="TimerEventDefinition_0inc4bb" />
-    </bpmn:boundaryEvent>
-    <bpmn:sequenceFlow id="Flow_00i2z9w" sourceRef="Event_1893m22" targetRef="Activity_0mguiwn" />
-    <bpmn:sequenceFlow id="Flow_0frb8ww" sourceRef="Gateway_04o04wm" targetRef="Activity_0vocc5v" />
-    <bpmn:sequenceFlow id="Flow_1ivwlrs" sourceRef="Activity_0vocc5v" targetRef="Gateway_1sff9ch" />
-    <bpmn:sequenceFlow id="Flow_0f99ffo" sourceRef="Activity_0mguiwn" targetRef="Activity_1bge4y3" />
-    <bpmn:sequenceFlow id="Flow_1b2q1zu" sourceRef="Activity_1bge4y3" targetRef="Gateway_04o04wm" />
-    <bpmn:sequenceFlow id="Flow_141yzl2" sourceRef="Gateway_1sff9ch" targetRef="Event_0qyzrqw" />
-    <bpmn:sequenceFlow id="Flow_0xrotr2" sourceRef="Gateway_1sff9ch" targetRef="Event_0ao3p20" />
-    <bpmn:sequenceFlow id="Flow_1g0fq61" sourceRef="Gateway_1sff9ch" targetRef="Event_087at3p" />
-    <bpmn:sequenceFlow id="Flow_1ahl93l" sourceRef="Event_0qyzrqw" targetRef="Activity_053v161" />
-    <bpmn:sequenceFlow id="Flow_1cyey8f" sourceRef="Event_087at3p" targetRef="Activity_1uph5b7" />
-    <bpmn:sequenceFlow id="Flow_0g7ai0y" sourceRef="Event_0ao3p20" targetRef="Activity_0h3mywd" />
-    <bpmn:sequenceFlow id="Flow_1qgvt2h" sourceRef="Activity_0h3mywd" targetRef="Activity_0rragw1" />
-    <bpmn:sequenceFlow id="Flow_0semo8c" sourceRef="Activity_1ccwe1g" targetRef="Gateway_04o04wm" />
-    <bpmn:sequenceFlow id="Flow_1uzapdw" sourceRef="Activity_1uph5b7" targetRef="Activity_1ccwe1g" />
-    <bpmn:sequenceFlow id="Flow_1op80by" sourceRef="Activity_07pkmgv" targetRef="Event_0o0odue" />
-    <bpmn:sequenceFlow id="Flow_1tzqcgk" sourceRef="Event_0yfwz0h" targetRef="Activity_07pkmgv" />
-    <bpmn:sequenceFlow id="Flow_1sq2xjd" sourceRef="Event_1g2l0tr" targetRef="Activity_0vz48y3" />
-    <bpmn:sequenceFlow id="Flow_0rmma7m" sourceRef="Activity_053v161" targetRef="Activity_1etus1u" />
-    <bpmn:sequenceFlow id="Flow_08yrka3" sourceRef="Activity_1etus1u" targetRef="Event_097fjqs" />
-    <bpmn:textAnnotation id="TextAnnotation_11jyxa2">
-      <bpmn:text>Plano de projeto [revisto]</bpmn:text>
+    <bpmn:endEvent id="Event_097fjqs">
+      <bpmn:incoming>Flow_08yrka3</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0bsasu1" />
+    </bpmn:endEvent>
+    <bpmn:task id="Activity_1etus1u" name="Criar relatório do projeto">
+      <bpmn:incoming>Flow_0rmma7m</bpmn:incoming>
+      <bpmn:outgoing>Flow_08yrka3</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0zf4r8v">
+        <bpmn:targetRef>DataStoreReference_1rnqf5j</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:sendTask id="Activity_0vz48y3" name="Definir novo prazo">
+      <bpmn:incoming>Flow_1sq2xjd</bpmn:incoming>
+    </bpmn:sendTask>
+    <bpmn:task id="Activity_07pkmgv" name="Revisão do plano de projeto">
+      <bpmn:incoming>Flow_1tzqcgk</bpmn:incoming>
+      <bpmn:outgoing>Flow_1op80by</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateThrowEvent id="Event_0o0odue" name="Cliente pediu alterações">
+      <bpmn:incoming>Flow_1op80by</bpmn:incoming>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_03njfss" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:dataObjectReference id="DataObjectReference_0bps4q9" dataObjectRef="DataObject_186mrql" />
+    <bpmn:dataObject id="DataObject_186mrql" />
+    <bpmn:task id="Activity_0rragw1" name="Guardar relatório de desistêcia">
+      <bpmn:incoming>Flow_1qgvt2h</bpmn:incoming>
+      <bpmn:property id="Property_0vt5ahz" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0liiloy">
+        <bpmn:sourceRef>DataObjectReference_0bps4q9</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0vt5ahz</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1m3ygcx">
+        <bpmn:targetRef>DataStoreReference_0tn9s0h</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:callActivity id="Activity_0mguiwn" name="Análise de descrição da loja">
+      <bpmn:incoming>Flow_00i2z9w</bpmn:incoming>
+      <bpmn:outgoing>Flow_0f99ffo</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:callActivity id="Activity_1uph5b7" name="Análise de descrição da loja">
+      <bpmn:incoming>Flow_1cyey8f</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uzapdw</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:dataObjectReference id="DataObjectReference_04g571v" dataObjectRef="DataObject_1yn03zy" />
+    <bpmn:dataObject id="DataObject_1yn03zy" />
+    <bpmn:task id="Activity_1ccwe1g" name="Revisão do plano de projeto">
+      <bpmn:incoming>Flow_1uzapdw</bpmn:incoming>
+      <bpmn:outgoing>Flow_0semo8c</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_10s45gg">
+        <bpmn:targetRef>DataObjectReference_04g571v</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_04o04wm">
+      <bpmn:incoming>Flow_0semo8c</bpmn:incoming>
+      <bpmn:incoming>Flow_1b2q1zu</bpmn:incoming>
+      <bpmn:outgoing>Flow_0frb8ww</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Activity_0h3mywd" name="Produção de relatório de desistência">
+      <bpmn:incoming>Flow_0g7ai0y</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qgvt2h</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1dl4qoy">
+        <bpmn:targetRef>DataObjectReference_0bps4q9</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:intermediateCatchEvent id="Event_0ao3p20" name="desistência">
+      <bpmn:incoming>Flow_0xrotr2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0g7ai0y</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0cm33ei" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_087at3p" name="pedido de aterações">
+      <bpmn:incoming>Flow_1g0fq61</bpmn:incoming>
+      <bpmn:outgoing>Flow_1cyey8f</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_08teq54" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_0qyzrqw" name="aprovação plano de projeto">
+      <bpmn:incoming>Flow_141yzl2</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ahl93l</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_056p581" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:eventBasedGateway id="Gateway_1sff9ch">
+      <bpmn:incoming>Flow_1ivwlrs</bpmn:incoming>
+      <bpmn:outgoing>Flow_141yzl2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0xrotr2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1g0fq61</bpmn:outgoing>
+    </bpmn:eventBasedGateway>
+    <bpmn:dataObjectReference id="DataObjectReference_1f1oau8" dataObjectRef="DataObject_0nh87b3" />
+    <bpmn:dataObject id="DataObject_0nh87b3" />
+    <bpmn:task id="Activity_1bge4y3" name="Produção do plano de projeto">
+      <bpmn:incoming>Flow_0f99ffo</bpmn:incoming>
+      <bpmn:outgoing>Flow_1b2q1zu</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0tfmdt6">
+        <bpmn:targetRef>DataObjectReference_1f1oau8</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:sendTask id="Activity_0vocc5v" name="Envio do plano do projeto ao cliente">
+      <bpmn:incoming>Flow_0frb8ww</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ivwlrs</bpmn:outgoing>
+      <bpmn:property id="Property_1j88q77" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0pojxxf">
+        <bpmn:sourceRef>DataObjectReference_04g571v</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1j88q77</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0l0oclx">
+        <bpmn:sourceRef>DataObjectReference_1f1oau8</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1j88q77</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:sendTask>
+    <bpmn:startEvent id="Event_1893m22" name="Descrição da loja recebida">
+      <bpmn:outgoing>Flow_00i2z9w</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1599hz7" />
+    </bpmn:startEvent>
+    <bpmn:textAnnotation id="TextAnnotation_19fy4ot">
+      <bpmn:text>Relatório de desistência</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_0yoakeu">
       <bpmn:text>Plano de projeto [initial]</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_19fy4ot">
-      <bpmn:text>Relatório de desistência</bpmn:text>
+    <bpmn:textAnnotation id="TextAnnotation_11jyxa2">
+      <bpmn:text>Plano de projeto [revisto]</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:association id="Association_195unrh" sourceRef="DataObjectReference_1f1oau8" targetRef="TextAnnotation_0yoakeu" />
-    <bpmn:association id="Association_0la0j7d" sourceRef="DataObjectReference_04g571v" targetRef="TextAnnotation_11jyxa2" />
     <bpmn:association id="Association_0bxxelj" sourceRef="DataObjectReference_0bps4q9" targetRef="TextAnnotation_19fy4ot" />
+    <bpmn:association id="Association_0la0j7d" sourceRef="DataObjectReference_04g571v" targetRef="TextAnnotation_11jyxa2" />
+    <bpmn:association id="Association_195unrh" sourceRef="DataObjectReference_1f1oau8" targetRef="TextAnnotation_0yoakeu" />
   </bpmn:process>
   <bpmn:process id="Process_06dopdo" isExecutable="false">
     <bpmn:dataStoreReference id="DataStoreReference_0tn9s0h" />
@@ -561,7 +561,7 @@
       <bpmndi:BPMNShape id="DataObjectReference_1kd0ftl_di" bpmnElement="DataObjectReference_1kd0ftl">
         <dc:Bounds x="3182" y="1122" width="36" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3158" y="1132.5" width="84" height="27" />
+          <dc:Bounds x="3158" y="1133" width="84" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0f313jj_di" bpmnElement="Event_0dckt17">
@@ -847,12 +847,15 @@
         <di:waypoint x="3405" y="1227" />
         <di:waypoint x="3405" y="344" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3407" y="423" width="55" height="14" />
+          <dc:Bounds x="3372" y="423" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_10ulc2q_di" bpmnElement="Flow_10ulc2q">
         <di:waypoint x="3950" y="1269" />
         <di:waypoint x="3950" y="344" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3922" y="433" width="55" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1pv7als_di" bpmnElement="Flow_1pv7als">
         <di:waypoint x="961" y="344" />
@@ -873,7 +876,7 @@
         <di:waypoint x="3200" y="540" />
         <di:waypoint x="3200" y="344" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3142" y="413" width="55" height="14" />
+          <dc:Bounds x="3172" y="423" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_17amc5o_di" bpmnElement="Flow_17amc5o">
