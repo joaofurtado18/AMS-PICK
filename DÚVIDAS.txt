@@ -1,0 +1,11 @@
+O que é o aviso no log? 
+
+Análise da descrição da loja pode ser call activity? 
+
+Como anotar os data objects? 
+
+No Boss são tudo Data Stores? Quantos são? 
+
+Produção e arquivo do relatório deve ser feito ao mesmo tempo? 
+
+Cliente pede alterações está corretamente representado? 
