@@ -1,1 +1,6 @@
-Informar eventos da loja é oferecido por quem?
+[ARCHI] Informar eventos da loja é oferecido por quem?
+[BPMN; P-SET] Explicitar cada uma das coisas de instalação?
+[BPMN; P-SET, P-ON] Quando usar send task vs intermediate message throw event?
+[BPMN; P-SET] Devo legendar passagem de protocolo BOSS->Realização de testes?
+[BPMN; P-ON] Teste positivo Signal first?
+[BPMN; P-ON] É mesmo preciso modelar cliente dado que só recebe uma notificação?
