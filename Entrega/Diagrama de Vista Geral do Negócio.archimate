@@ -80,7 +80,9 @@
     <element xsi:type="archimate:ApplicationService" name="STORE" id="id-ca8b4b75e6f641a2bf241926a6aed7ad"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-dfd4dd23499c4963969779f0ba2aea78" type="technology"/>
-  <folder name="Motivation" id="id-c0118358110f4b7f985e53b353a7f334" type="motivation"/>
+  <folder name="Motivation" id="id-c0118358110f4b7f985e53b353a7f334" type="motivation">
+    <element xsi:type="archimate:Meaning" name="Of Life" id="id-4612bb1da08844c58c10540ab615513b"/>
+  </folder>
   <folder name="Implementation &amp; Migration" id="id-689fb11c89364aac989ac0a4ee065032" type="implementation_migration"/>
   <folder name="Other" id="id-d24e0d1fa34d4828baafd0ba28c52bbe" type="other">
     <element xsi:type="archimate:Grouping" name="Grouping" id="id-7a0b826e310e4be2b6c01f6eb8516b2e"/>
@@ -168,6 +170,7 @@
     <element xsi:type="archimate:AssignmentRelationship" id="id-7f5e8f6ba5eb4ed698a9ddfccc3d64d2" source="id-81789d5a79df42908767c907d78122da" target="id-19dc938e33f846fdbfb0261bb9c813a1"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-db98312278a948c1821cac2ead7e8d53" source="id-6f692b991f5e47259178ffbd0a324d60" target="id-72fc03e21ade412787d8ee3fc1482288"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-5e7015a8e9fd4c55bff15e1b90e7efaf" source="id-6f692b991f5e47259178ffbd0a324d60" target="id-81789d5a79df42908767c907d78122da"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="id-c3d3539728ba4a3286cf2bc053c444ba" source="id-85734fad25154c29b58e128bdf3d5c84" target="id-4612bb1da08844c58c10540ab615513b"/>
   </folder>
   <folder name="Views" id="id-7fce4ebe19a4482ea0a940756a9839fc" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-c0ecc9b7b105417ebe0ce6b127491892">

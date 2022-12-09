@@ -205,7 +205,7 @@
           <bpmn:outgoing>Flow_0fd13yr</bpmn:outgoing>
         </bpmn:task>
         <bpmn:textAnnotation id="TextAnnotation_1s7wc44">
-          <bpmn:text>Nota</bpmn:text>
+          <bpmn:text>Qualquer coisa</bpmn:text>
         </bpmn:textAnnotation>
         <bpmn:association id="Association_0w5lfjk" sourceRef="Gateway_0kbaznm" targetRef="TextAnnotation_1s7wc44" />
       </bpmn:subProcess>
@@ -515,7 +515,7 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1s7wc44_di" bpmnElement="TextAnnotation_1s7wc44">
-        <dc:Bounds x="1481" y="1085" width="99.98694034205708" height="29.992818085003794" />
+        <dc:Bounds x="1481" y="1085" width="99.97917175292969" height="29.98958396911621" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_17j2ib5_di" bpmnElement="Gateway_0kbaznm">

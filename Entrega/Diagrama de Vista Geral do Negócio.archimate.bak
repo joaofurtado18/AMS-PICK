@@ -45,7 +45,7 @@
     <element xsi:type="archimate:BusinessActor" name="Cliente potencial" id="id-0c483be343e64ddeb34ee805a05ea8aa"/>
     <element xsi:type="archimate:BusinessActor" name="Cliente" id="id-2e283263df5441d5b26bfd2632fb54eb"/>
     <element xsi:type="archimate:BusinessActor" name="Funcionário" id="id-72fc03e21ade412787d8ee3fc1482288"/>
-    <element xsi:type="archimate:BusinessActor" name="Chefe" id="id-81789d5a79df42908767c907d78122da"/>
+    <element xsi:type="archimate:BusinessActor" name="Chefe de equipa" id="id-81789d5a79df42908767c907d78122da"/>
   </folder>
   <folder name="Application" id="id-f2393313b2a74f479ff8f5281dcd35d1" type="application">
     <element xsi:type="archimate:ApplicationService" name="STORE" id="id-eb1ce7859daa453b9189164bc26f6b1c"/>
