@@ -1,0 +1,12 @@
+Dúvidas
+
+- UC para Tipo de artigo (linha 214);
+- Incluir visitante no UC [Ser informado sobre saída de visitante]? 
+- Incluir so comrpador e reposioror;
+- Mais UC com extend em: [Indicar tipo e zona onde o artigo foi retirado / devolvido]
+- Good name? [Obter lista de zonas menos ocupadas]
+- Enunciado do projeto: dois diagramas independentes, mas alinhados entre si,
+- Linha 242: Incluir hora do facto.
+- app smart faz parte do STORE?
+- [Ser informado da saída de visitante] "Ser informado..." OU "detetar entrada e saída" 
+(ponto de vista do STORE ou do C-ID)
