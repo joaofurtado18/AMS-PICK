@@ -1,5 +1,16 @@
-Dúvidas
+Dúvidas para o José Borbinha aka atonio costa
 
+Dúvidas fresh
+- P-SET ou DPRJ como ator em RUN
+- Representar interações com D-PRJ e U-SW!!????
+- representar P-ON inteiro ou nao?
+- STORE associado a "ser informado das saidaS e entradas (UC)"?
+- Utilizar information flow parao C-OUT?
+- USar sensores de pressao para saber se area < 50%????
+- Quando se tem dois atores ligados ao mesmo UC
+(e.g. [STORE: Ser informado de eventos da loja]) nomear em relação a quem?
+
+Dúvidas fora de validade
 - UC para Tipo de artigo (linha 214);
 - Incluir visitante no UC [Ser informado sobre saída de visitante]? 
 - Incluir so comrpador e reposioror;
@@ -10,3 +21,7 @@ Dúvidas
 - app smart faz parte do STORE?
 - [Ser informado da saída de visitante] "Ser informado..." OU "detetar entrada e saída" 
 (ponto de vista do STORE ou do C-ID)
+
+
+
+
