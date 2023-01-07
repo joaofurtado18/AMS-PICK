@@ -1,5 +1,3 @@
-Dúvidas para o José Borbinha aka atonio costa
-
 Dúvidas fresh
 - P-SET ou DPRJ como ator em RUN
 - Representar interações com D-PRJ e U-SW!!????
@@ -9,6 +7,8 @@ Dúvidas fresh
 - USar sensores de pressao para saber se area < 50%????
 - Quando se tem dois atores ligados ao mesmo UC
 (e.g. [STORE: Ser informado de eventos da loja]) nomear em relação a quem?
+- Representar o cliente ou nao, visto que o C-MNG etc são sistemas do cliente;
+- Como meter atributo a unique???!
 
 Dúvidas fora de validade
 - UC para Tipo de artigo (linha 214);
